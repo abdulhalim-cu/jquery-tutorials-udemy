@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LESSON 7 CREATING AND APPENDING CONTENT TO DOM</title>
+	<link rel="stylesheet" href="css/night.css">
+	
+	<style type="text/css">
+		body{
+			font-family: Helvatica, Arial, sans-serif;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 1.8em;
+		}
+
+		blockquote.co {
+			float: right;
+			font-size: 2em;
+			line-height: 1em;
+			background: #e3e3d3;
+			color: black;
+			font-style: italic;
+			width: 30%;
+			text-align: center;
+		}
+		blockquote:after {
+			content: '"'
+		}
+		blockquote:before {
+			content: '"'
+		}
+	</style>
+
+</head>
+<body>
+	<h1>My Website</h1>
+	<article>
+		<h1>CREATING AND APPENDING CONTENT TO DOM</h1>
+		<p><span class='co'>Lorem ipsum dolor sit amet</span>, consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing etil, 
+		    sed do eiusmodconsectetur adipisicing etil, sed do eiusmod tempor incididunt ut labore et dolore
+		    magna aliqua.consectetur adipisicing etil, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		    tempor incididunt ut labore et dolore magna aliqua.
+		</p>
+		<h1>CREATING AND APPENDING CONTENT TO DOM</h1>
+		<p><span class='co'>jQuery is the beauty</span>, consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing etil, 
+		    sed do eiusmodconsectetur adipisicing etil, sed do eiusmod tempor incididunt ut labore et dolore
+		    magna aliqua.consectetur adipisicing etil, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		    tempor incididunt ut labore et dolore magna aliqua.
+		</p>
+	</article>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		// $( 'article' ).append('<h2>THIS IS A HEADING FROM JQUERY APPEND METHOD</h2>');
+		// $( 'article' ).prepend('<h2>THIS IS A HEADING FROM JQUERY PREPEND METHOD</h2>');
+		// $( 'p' ).first().before('<p>This is a paragraph from jquery before first paragraph</p>');
+
+		// $('<h3 class="myClass">H3 TAG WITH JQUERY</h3>').appendTo('body');
+		// Another way to create a tag
+		// $('<h3></h3>', {
+		// 		text: "H3 TAG WITH JQUERY",
+		// 		class: "myClass"
+
+		// }).appendTo('body');
+
+		// $('<h3></h3>', {
+		// 		text: "H3 TAG WITH JQUERY",
+		// 		class: "myClass"
+
+		// }).prependTo('body');
+
+		// $('<h3></h3>', {
+		// 		text: "H3 TAG WITH JQUERY",
+		// 		class: "myClass"
+
+		// }).insertAfter('h1');
+		// Also work with [after(), insertBefore()] methods
+
+
+		// GET an element and appendTo(), prependTp(), insertAfter(), insertBefore()
+		//  
+		(function () {
+			var co = $('span.co').each(function (){
+				$('<blockquote></blockquote>', {
+					class: 'co',
+					text: $(this).text()
+				}).prependTo( $(this).closest('p') );
+			}); 
+		})();
+
+	</script>
+
+</body>
+</html>
