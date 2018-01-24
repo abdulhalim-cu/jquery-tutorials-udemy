@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 3</title>
+	<link rel="stylesheet" href="css/day.css">
+	
+	<style type="text/css">
+		
+	</style>
+
+</head>
+<body>
+	<h1>My Website</h1>
+	
+	<!-- <div>
+		<button>DAY</button>
+		<button>NIGHT</button>
+	</div> -->
+
+	<div>
+		<!-- Another way to grab click events from button or other elements -->
+		<button data-file="day">DAY BUTTON</button>
+		<button data-file="night">NIGHT BUTTON</button>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		(function (){
+
+			// Link variable to reduce jumping to the dom every time button clicked
+			var link = $('link');
+
+			$('button').click(function(){
+				var buttonText = $(this).text().toLowerCase();
+				// console.log(buttonText);
+				// link.attr('href', 'css/' + buttonText + '.css');
+
+				/*
+				 Grab click event using data attribute in two different ways 
+					1. $(this).attr('data-file');
+					2. $(this).data('file');
+				*/
+				// var dataText = $(this).attr('data-file').toLowerCase();
+				var dataText = $(this).data('file').toLowerCase();
+				// console.log(dataText);
+				link.attr('href', 'css/' + dataText + '.css');
+
+				$(this)
+					.siblings('button')
+						.removeAttr('disabled')
+						.end()
+						.attr('disabled', 'disabled');				
+			});
+		})();
+	</script>
+
+</body>
+</html>

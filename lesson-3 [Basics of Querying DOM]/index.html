@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 3</title>
+	
+	<style type="text/css">
+		.chlid-color {
+			color: blue;
+			font-family: Helvatica, Arial, sans-serif;
+			font-size: 25px;
+			font-weight: bold;
+			text-shadow: 3px 5px 3px gray;
+		}
+	
+		.container {
+			color: green;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to My Website</h1>
+		<p>Lorem ipsum dolor temport incididunt ut quis sters.
+			Lorem ipsum dolor temport incididunt ut quis sters.
+			Lorem ipsum dolor temport incididunt ut quis sters.
+			Lorem ipsum dolor temport incididunt ut quis sters.Lorem ipsum dolor temport incididunt ut quis sters.
+			Lorem ipsum dolor temport incididunt ut quis sters.</p>
+		<ul class="emphesis">
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>
+				<ul>
+					<li>This is grand children</li>
+				</ul>
+			</li>
+		</ul>
+
+		<div>
+			<ul class="toggle">
+				<li>Apple</li>
+				<li>Banana</li>
+				<li>Orange</li>
+				<li>Marshmallow</li>
+				<li>Water Mallon</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		/*
+			$('ul.emphesis').find('li:first').css('color', 'green');
+			$('ul.emphesis').children('li:first').css('color', 'green');
+			$('ul.emphesis').children('li:first-child').css('color', 'green');
+			$('ul.emphesis').children('li:nth-child(2)').css('color', 'green');
+			$('ul.emphesis').children('li').first().css('color', 'green');
+			$('ul.emphesis').children('li').eq(0).css('color', 'green');
+		*/
+		/*
+			$('ul.emphesis').children('li').eq(1).text("Added with jQuery");
+			$('ul.emphesis').children('li').eq(0).css('color', 'red');
+			$('ul.emphesis').children('li').eq(2).addClass('chlid-color');
+		*/
+		
+		// var counter = 0;
+		// var i = setInterval(function(){
+		//     // do your thing
+		//     var loop = 0;
+		//     if ( counter < 5) {
+	 //    		$('ul.toggle').children('li').eq(counter).next().css('color', 'black');		
+	 //    		$('ul.toggle').children('li').eq(counter).css('color', 'blue');
+	 //    		$('ul.toggle').children('li').eq(counter).prev().css('color', 'black');
+		// 		if ( counter == 4) {
+		//     		counter = 0;
+		//     	}
+		//     }
+		//     counter++;
+		// }, 2000);
+
+		// Remove class from parent
+		$('li').parent().removeClass('emphesis')
+
+		// Remove class from grantparents
+		// $('li').parents('.container').removeClass('container');
+		// $('li').closest('div.container').removeClass('container');
+		$('li').parents('div.container').removeClass('container');
+		
+	</script>
+
+</body>
+</html>

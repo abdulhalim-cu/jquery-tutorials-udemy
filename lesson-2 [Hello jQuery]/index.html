@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Learn</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+	<style type="text/css">
+		ul li {color: red;}
+		.emphasis {
+			color: green;
+			font-weight: bold;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<ul>
+		<li>Hello jQuery</li>
+		<li>30 Days to learn jQuery</li>
+	</ul>
+
+
+	<!-- <script type="text/javascript" src="js/jquery-3.3.1.js"></script> -->
+	
+	<script type="text/javascript">
+		// jQuery('ul li').css('color', 'green');
+		// jQuery('ul li').addClass('emphasis');
+		// `$` sign represents --> jQuery
+		// $('ul li').addClass('emphasis');
+		$(document).ready(function() {
+			$('li:first-child').addClass('emphasis');
+		});
+	</script>
+
+</body>
+</html>
