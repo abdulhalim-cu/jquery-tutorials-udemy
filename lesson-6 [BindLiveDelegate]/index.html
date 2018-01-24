@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LESSON 6 BIND LIVE DELEGATE METHOD</title>
+	<link rel="stylesheet" href="css/night.css">
+	
+	<style type="text/css">
+		
+	</style>
+
+</head>
+<body>
+	<h1>BIND LIVE DELEGATE METHOD</h1>
+	
+	<div class="container">
+		<h2>Click Me</h2>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		(function () {
+			$('h2').bind('click', function () {
+				$(this).clone(true).appendTo('body');
+			});
+
+			/* .live() --> method is deprecated in jquery 1.7 and removed from 1.9 and higher
+			$( "h2" ).live( "click", function() {
+			  $(this).clone(true).appendTo('body');
+			});
+			*/
+
+			/* .delegate() --> method deprecated from version 3.0
+			
+			$( "div.container" ).delegate( "h2", "click", function() {
+			  $( this ).clone().appendTo( 'div.container' );
+			});
+			*/
+		})();	
+	</script>
+
+</body>
+</html>
