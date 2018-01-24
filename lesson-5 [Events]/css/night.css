@@ -1,0 +1,30 @@
+body{
+	background: black;
+	color: white;
+	width: 650px;
+	margin: auto;
+}
+
+dl {
+}
+
+dt {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1.5em;
+	line-height: 1.7em;
+	background: #e3e3e3;
+	border-bottom: 1px solid #C5C5C5;
+	border-top: 1px solid white;
+	color: black;
+}
+
+dt:first-child{ border-top: none; }
+dt:last-child{ border-bottom: none; }
+
+dd {
+	margin: 0;
+	padding: 1em 0;
+}
+
+.hide { display: none; }
