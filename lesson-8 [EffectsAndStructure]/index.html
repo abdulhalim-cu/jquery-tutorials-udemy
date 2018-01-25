@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LESSON 7 CREATING AND APPENDING CONTENT TO DOM</title>
+	<link rel="stylesheet" href="css/night.css">
+	
+	<style type="text/css">
+		.contact {
+			background: #e3e3e3;
+			color: black;
+			padding: 1em 2em;
+			position: relative;
+		}
+
+		.js .contact {
+			position: absolute;
+			top: 0;
+			width: inherit;
+			display: none;
+		}
+
+		.contact h2 {
+			margin-top: 0;
+		}
+
+		.contact ul {
+			padding: 0;
+		}
+
+		.contact li {
+			list-style: none;
+			margin-bottom: 1em;
+		}
+		
+		.close {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			font-weight: bold;
+			font-family: sans-serif;
+			cursor: pointer;
+		}
+		
+		input, textarea { width: 100%; line-height: 2em; }
+		input[type=submit] { width: auto; }
+		label { display: block; text-align: left; }
+
+	</style>
+
+</head>
+<body>
+	<h1>OUR WEBSITE</h1>
+	<article>
+		<h1>LEARN ABOUT US & CONTACT WITH US</h1>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua.consectetur adipisicing etil, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing etil, 
+		    sed do eiusmodconsectetur adipisicing etil, sed do eiusmod tempor incididunt ut labore et dolore
+		    magna aliqua.consectetur adipisicing etil, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		    tempor incididunt ut labore et dolore magna aliqua.
+		</p>
+		
+	</article>
+	<div class="contact">
+		<h2>CONTACT US</h2>
+		<form action="#">
+			<ul>
+				<li><label for="name">Name: </label><input type="text" id="name" name="name"></li>
+				<li><label for="email">Email: </label><input type="email" name="email" id="email"></li>
+				<li><label for="comments">What's Up?</label><textarea id="comments" name="comments"></textarea></li>
+				<li><input type="submit" name="submit"></li>
+			</ul>
+		</form>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	(function (){
+		$('html').addClass('js');
+
+		var contactForm = {
+			
+			container: $('.contact'),
+
+			config: {
+				effect: 'slideToggle',
+				speed: 500
+			},
+
+			init: function (config) {
+				$.extend(this.config, config);
+
+				$('<button></button>', {
+					text: 'CONTACT US'
+				})
+					.insertAfter( 'article' )
+					.on('click', this.show);
+			},
+
+			show: function () {
+				var cf = contactForm,
+					container = cf.container,
+					config = cf.config;
+
+				if ( container.is(':hidden') ) {
+					cf.close.call(container);
+					container[config.effect](config.speed);
+				}
+			},
+			
+			close: function () {
+				var $this = $(this);
+
+				// Add functionality to prevent extra span element
+				if ( $this.find('span.close').length ) return;	
+
+				$('<span class=close>X</span>')
+					.prependTo(this)
+					.on('click', function(){
+						$this[contactForm.config.effect](contactForm.config.speed);
+					});
+			}
+		};
+
+		contactForm.init({
+			effect: 'fadeToggle',
+			speed: 300
+		});
+
+	})();
+
+	</script>
+
+</body>
+</html>
